@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Joker.Views.Prog"
+        Title="Prog" Background="Aqua">
+    <StackPanel Orientation="Vertical" Margin="10 10 0 0">
+        <StackPanel Orientation="Horizontal" Spacing="20">
+            <Button Name="AddBtn" Content="Добавить" Click="AddButton_OnClick"></Button>
+            <Button Name="DelBtn" Content="Добавить" Click="DelButton_OnClick"></Button>
+            <TextBox Name="SearchTb" Width="200" TextChanged="SerTextBox_OnTextChanging"></TextBox>
+            <Button Name="CancelBtn" Content="Сброс" Click="CancelBtn_OnClick"></Button>
+        </StackPanel>
+        <DataGrid Name="PlayersGrid" IsReadOnly="True" Margin="10 10 0 0" Height="400">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя игрока" Binding="{Binding PlayerName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Позиция" Binding="{Binding Position}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Вес" Binding="{Binding Weight}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Рост" Binding="{Binding Height}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Birthday}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата начала игры" Binding="{Binding GameStart}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Команда" Binding="{Binding Team}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>
